@@ -1,0 +1,204 @@
+# --- MEDICIONES ELÉCTRICAS SALIDA (inv01) ---
+- name: "inv01 AC Output Active Power"
+  unique_id: "inv01_ac_output_active_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_output_active_power | float(0))}}"
+  unit_of_measurement: "W"
+  device_class: power
+
+- name: "inv01 AC Output Apparent Power"
+  unique_id: "inv01_ac_output_apparent_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_output_apparent_power | float(0)) }}"
+  unit_of_measurement: "VA"
+
+- name: "inv01 AC Output Reactive Power"
+  unique_id: "inv01_ac_output_reactive_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_output_reactive_power | float(0)) }}"
+  unit_of_measurement: "VAr"
+
+- name: "inv01 AC Output Voltage"
+  unique_id: "inv01_ac_output_voltage"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_output_voltage | float(0)) }}"
+  unit_of_measurement: "V"
+  device_class: voltage
+
+- name: "inv01 AC Output Frequency"
+  unique_id: "inv01_ac_output_frequency"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_output_frequency | float(0)) }}"
+  unit_of_measurement: "Hz"
+  device_class: frequency
+
+- name: "inv01 Load Percentage"
+  unique_id: "inv01_load_percentage"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.load_percentage | float(0)) }}"
+  unit_of_measurement: "%"
+
+# --- BATERÍA (inv01) ---
+- name: "inv01 Battery Voltage"
+  unique_id: "inv01_battery_voltage"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_voltage | float(0)) }}"
+  unit_of_measurement: "V"
+  device_class: voltage
+
+- name: "inv01 Battery SOC"
+  unique_id: "inv01_battery_soc"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_soc | float(0)) }}"
+  unit_of_measurement: "%"
+  device_class: battery
+
+- name: "inv01 Battery Charging Current"
+  unique_id: "inv01_battery_charging_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_charging_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 Battery Discharge Current"
+  unique_id: "inv01_battery_discharge_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_discharge_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 Battery Real Charge Current"
+  unique_id: "inv01_battery_real_charge_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_real_charge_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 Battery Real Power"
+  unique_id: "inv01_battery_real_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.battery_real_power | float(0)) }}"
+  unit_of_measurement: "W"
+  device_class: power
+
+# --- PANELES SOLARES PV (inv01) ---
+- name: "inv01 PV1 Input Power"
+  unique_id: "inv01_pv1_input_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv1_input_power | float(0)) }}"
+  unit_of_measurement: "W"
+  device_class: power
+
+- name: "inv01 PV1 Input Voltage"
+  unique_id: "inv01_pv1_input_voltaje"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv1_input_voltaje | float(0)) }}"
+  unit_of_measurement: "V"
+  device_class: voltage
+
+- name: "inv01 PV1 Input Current"
+  unique_id: "inv01_pv1_input_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv1_input_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 PV2 Input Power"
+  unique_id: "inv01_pv2_input_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv2_input_power | float(0)) }}"
+  unit_of_measurement: "W"
+  device_class: power
+
+- name: "inv01 PV2 Input Voltage"
+  unique_id: "inv01_pv2_input_voltaje"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv2_input_voltaje | float(0)) }}"
+  unit_of_measurement: "V"
+  device_class: voltage
+
+- name: "inv01 PV2 Input Current"
+  unique_id: "inv01_pv2_input_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv2_input_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 PV Total Input Current"
+  unique_id: "inv01_pv_total_input_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.pv_total_input_current | float(0)) }}"
+  unit_of_measurement: "A"
+  device_class: current
+
+- name: "inv01 Total PV Input Power"
+  unique_id: "inv01_total_inv_pv_input_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.total_inv_pv_input_power | float(0)) }}"
+  unit_of_measurement: "W"
+  device_class: power
+
+# --- ENTRADA RED GRID (inv01) ---
+- name: "inv01 Grid Input Voltage"
+  unique_id: "inv01_grid_input_voltage"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.grid_input_voltage | float(0)) }}"
+  unit_of_measurement: "V"
+  device_class: voltage
+
+- name: "inv01 Grid Input Frequency"
+  unique_id: "inv01_grid_input_frequency"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.grid_input_frequency | float(0)) }}"
+  unit_of_measurement: "Hz"
+  device_class: frequency
+
+- name: "inv01 Grid Estimate Input Power"
+  unique_id: "inv01_grid_estimate_input_power"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ (value_json.ac_input_power_estimate | float(0)) }}"
+  unit_of_measurement: "W"
+  device_class: power
+
+# --- CONFIGURACIÓN E INFO (inv01) ---
+- name: "inv01 Inverter ID"
+  unique_id: "inv01_inverter_id"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.inverter_id }}"
+
+- name: "inv01 Serial Number"
+  unique_id: "inv01_serial_number"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.serial_number }}"
+
+- name: "inv01 Work Mode"
+  unique_id: "inv01_work_mode"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.work_mode }}"
+
+- name: "inv01 Output Mode"
+  unique_id: "inv01_output_mode"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.output_mode }}"
+
+- name: "inv01 Parallel Configuration"
+  unique_id: "inv01_parallel_configuration"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.parallel_configuration }}"
+
+- name: "inv01 Charger Source Priority"
+  unique_id: "inv01_charger_source_priority"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.charger_source_priority }}"
+
+- name: "inv01 Max AC Charger Current"
+  unique_id: "inv01_config_max_ac_charger_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.config_max_ac_charger_current }}"
+  unit_of_measurement: "A"
+
+- name: "inv01 Max Charger Current"
+  unique_id: "inv01_config_max_charger_current"
+  state_topic: "homeassistant/axpert/inv01"
+  value_template: "{{ value_json.config_max_charger_current }}"
+  unit_of_measurement: "A"
