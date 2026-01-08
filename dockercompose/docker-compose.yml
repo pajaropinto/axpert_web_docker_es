@@ -1,7 +1,7 @@
 services:
   axpert-monitor:
     image: pajaropinto/axpert_monitor_es:latest
-    container_name: axpert-app
+    container_name: axpert-monitor
     volumes:
       - /yourpath/axpert_monitor/config:/config
       - /yourpath/axpert_monitor/log:/log
