@@ -2,6 +2,13 @@
 
 Monitorización y control avanzado para **inversores Axpert / Voltronic / MPPSolar** en configuración paralela, con interfaz web, MQTT y soporte Docker.
 
+Este proyecto consiste en un contenedor Docker diseñado para monitorear dos inversores Voltronic Axpert conectados en paralelo. El sistema se comunica 
+con los inversores a través de un conversor TCP/Serial, recopila sus datos en tiempo real, calcula métricas agregadas (como corriente neta de carga, 
+potencia total y estimación de entrada AC) y publica toda la información —tanto individual como consolidada— en un broker MQTT mediante mensajes JSON. 
+La configuración del sistema (incluyendo IPs, puertos, credenciales MQTT y parámetros de los inversores) es completamente dinámica y editable desde 
+una interfaz web integrada, sin necesidad de reiniciar el contenedor. Además, incluye un indicador visual del estado de la conexión MQTT y gestiona 
+logs de forma cíclica para optimizar el uso de almacenamiento.
+
 ✅ **Características principales**:
 - Lectura en tiempo real de **dos inversores en paralelo** mediante protocolo `QPGS`.
 - Cálculo avanzado de:
