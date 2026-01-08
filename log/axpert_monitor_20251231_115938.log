@@ -1,0 +1,341 @@
+2025-12-31 11:59:38.056 | Intialized logger: log/axpert_monitor_20251231_115938.log
+2025-12-31 11:59:38.056 | 🚀 Iniciando axpert_monitor en modo continuo (recarga config en cada ciclo)...
+2025-12-31 11:59:38.056 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 11:59:38.056 |    - Retardo entre inversores: 1000 ms
+2025-12-31 11:59:38.056 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 11:59:38.056 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 11:59:38.056 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 11:59:40.449 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 11:59:40.449 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 11:59:40.449 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 11:59:45.449 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 11:59:45.449 |    - Retardo entre inversores: 1000 ms
+2025-12-31 11:59:45.449 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 11:59:45.449 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 11:59:45.449 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 11:59:47.784 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 11:59:47.785 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 11:59:47.785 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 11:59:52.785 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 11:59:52.785 |    - Retardo entre inversores: 1000 ms
+2025-12-31 11:59:52.785 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 11:59:52.785 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 11:59:52.785 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 11:59:55.047 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 11:59:55.047 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 11:59:55.047 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:00.047 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:00.047 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:00.048 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:00.048 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:00.048 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:02.455 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:02.455 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:02.455 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:07.456 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:07.456 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:07.456 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:07.456 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:07.456 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:09.720 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:09.720 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:09.720 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:14.720 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:14.720 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:14.720 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:14.720 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:14.721 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:17.127 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:17.127 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:17.127 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:22.128 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:22.128 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:22.128 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:22.128 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:22.128 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:24.463 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:24.463 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:24.463 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:29.463 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:29.463 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:29.463 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:29.463 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:29.463 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:31.798 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:31.798 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:31.799 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:36.799 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:36.799 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:36.799 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:36.799 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:36.799 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:39.134 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:39.134 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:39.134 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:44.134 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:44.134 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:44.134 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:44.134 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:44.134 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:44.140 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:00:49.140 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:49.141 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:49.141 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:49.141 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:49.141 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:51.419 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:51.419 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:51.419 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:00:56.419 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:00:56.419 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:00:56.419 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:00:56.419 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:00:56.420 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:00:58.756 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:00:58.756 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:00:58.756 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:01:03.757 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:03.757 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:03.757 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:03.757 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:03.757 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:03.762 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:08.762 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:08.762 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:08.762 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:08.762 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:08.763 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:08.768 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:13.768 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:13.768 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:13.768 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:13.768 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:13.769 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:13.774 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:18.774 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:18.774 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:18.774 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:18.774 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:18.775 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:18.780 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:23.780 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:23.780 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:23.780 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:23.780 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:23.781 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:23.786 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:28.787 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:28.787 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:28.787 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:28.787 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:28.787 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:28.793 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:33.793 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:33.793 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:33.793 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:33.793 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:33.793 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:33.843 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:38.843 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:38.843 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:38.843 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:38.843 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:38.843 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:38.849 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:43.849 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:43.849 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:43.849 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:43.849 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:43.849 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:43.864 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:48.864 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:48.864 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:48.864 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:48.864 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:48.865 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:48.870 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:53.871 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:53.871 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:53.871 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:53.871 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:53.871 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:53.877 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:01:58.877 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:01:58.877 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:01:58.877 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:01:58.877 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:01:58.877 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:01:58.883 | ⚠️ Error en ciclo: Timeout en recepción
+2025-12-31 12:02:03.883 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:03.883 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:03.883 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:03.883 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:03.883 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:06.257 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:06.257 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:06.257 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:11.258 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:11.258 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:11.258 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:11.258 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:11.258 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:13.521 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:13.521 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:13.521 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:18.522 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:18.522 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:18.522 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:18.522 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:18.522 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:20.929 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:20.929 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:20.929 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:25.929 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:25.930 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:25.930 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:25.930 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:25.930 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:28.264 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:28.264 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:28.264 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:33.264 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:33.264 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:33.265 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:33.265 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:33.265 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:35.600 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:35.600 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:35.600 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:40.601 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:40.601 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:40.601 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:40.601 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:40.601 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:42.935 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:42.936 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:42.936 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:47.936 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:47.936 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:47.936 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:47.936 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:47.936 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:50.271 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:50.271 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:50.271 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:02:55.272 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:02:55.272 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:02:55.272 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:02:55.272 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:02:55.272 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:02:57.607 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:02:57.607 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:02:57.607 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:02.607 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:02.608 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:02.608 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:02.608 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:02.608 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:04.943 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:04.943 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:04.943 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:09.943 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:09.943 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:09.943 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:09.943 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:09.944 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:12.278 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:12.278 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:12.278 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:17.279 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:17.279 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:17.279 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:17.279 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:17.279 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:19.614 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:19.614 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:19.614 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:24.614 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:24.614 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:24.614 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:24.614 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:24.614 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:26.949 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:26.949 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:26.950 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:31.950 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:31.950 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:31.950 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:31.950 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:31.950 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:34.285 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:34.285 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:34.286 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:39.286 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:39.286 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:39.286 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:39.286 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:39.286 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:41.721 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:41.722 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:41.722 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:46.722 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:46.722 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:46.722 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:46.722 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:46.722 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:49.057 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:49.057 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:49.057 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:03:54.057 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:03:54.058 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:03:54.058 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:03:54.058 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:03:54.058 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:03:56.393 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:03:56.393 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:03:56.393 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:01.393 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:01.393 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:01.393 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:01.393 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:01.393 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:04:03.728 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:04:03.728 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:04:03.728 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:08.729 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:08.729 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:08.729 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:08.729 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:08.729 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:04:11.064 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:04:11.064 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:04:11.064 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:16.064 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:16.064 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:16.064 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:16.064 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:16.065 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:04:18.400 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:04:18.400 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:04:18.400 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:23.400 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:23.400 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:23.400 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:23.400 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:23.401 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:04:25.735 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:04:25.735 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:04:25.736 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:30.736 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:30.736 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:30.736 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:30.736 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:30.736 | 🔄 Nueva iteración (modo continuo)
+2025-12-31 12:04:33.071 | ✅ Publicado (retain) en: homeassistant/axpert/inv01
+2025-12-31 12:04:33.071 | ✅ Publicado (retain) en: homeassistant/axpert/inv02
+2025-12-31 12:04:33.071 | ✅ Publicado (retain) en: homeassistant/axpert/totales
+2025-12-31 12:04:38.071 | ⚙️  Configuración cargada desde config/app_config.json
+2025-12-31 12:04:38.071 |    - Retardo entre inversores: 1000 ms
+2025-12-31 12:04:38.071 |    - Inversor TCP: 10.0.0.235:26
+2025-12-31 12:04:38.071 |    - Broker MQTT: 10.0.0.250:1883
+2025-12-31 12:04:38.071 | 🔄 Nueva iteración (modo continuo)
