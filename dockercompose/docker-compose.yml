@@ -1,0 +1,17 @@
+services:
+  axpert-monitor:
+    image: pajaropinto/axpert-monitor:latest
+    container_name: axpert-app
+    volumes:
+      - /yourpath/axpert_monitor/config:/config
+      - /yourpath/axpert_monitor/log:/log
+    restart: always
+    networks:
+      homeassistant:
+        ipv4_address: 172.100.0.35
+    ports:
+      - "60606:60606"
+networks:
+  homeassistant:
+    external: true
+    name: homeassistant
