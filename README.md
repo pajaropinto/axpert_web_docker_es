@@ -67,7 +67,7 @@ Docker instalado en el servidor.
 
 🐳 Imagen Docker
 Disponible en Docker Hub:
-🔗 pajaropinto/axpert-monitor
+🔗 pajaropinto/axpert_monitor_es
 
 Etiquetas:
 
