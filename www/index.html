@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axpert Monitor</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/mqtt@4.3.2/dist/mqtt.min.js"></script>
+</head>
+
+<body>
+    <h1>📊 Axpert Monitor</h1>
+
+    <div class="tabs">
+        <button class="tablink" onclick="openTab(event, 'Tab1')">Inversores</button>
+        <button class="tablink" onclick="openTab(event, 'Tab2')">Configuración Inversores</button>
+        <button class="tablink" onclick="openTab(event, 'Tab3')">Configuración Sistema</button>
+    </div>
+
+    <!-- Pestaña 1: Datos agrupados -->
+    <div id="Tab1" class="tabcontent" style="display:block;">
+        <div class="columns">
+            <div class="column">
+                <h3>Inversor 1</h3>
+                <div id="inv1-data">Cargando...</div>
+            </div>
+            <div class="column">
+                <h3>Inversor 2</h3>
+                <div id="inv2-data">Cargando...</div>
+            </div>
+            <div class="column">
+                <h3>Totales</h3>
+                <div id="totals-data">Cargando...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pestaña 2: Configuración de inversores -->
+    <div id="Tab2" class="tabcontent">
+        <h2>⚙️ Configuración de Inversores</h2>
+        <div class="inverter-columns">
+            <div class="inverter-col">
+                <h3>Inversor 1</h3>
+                <div id="inv01-config-fields"></div>
+                <div class="config-buttons">
+                    <button onclick="loadInverterConfig('inv01')">🔄 Cargar</button>
+                    <button onclick="saveInverterConfig('inv01')">💾 Salvar</button>
+                    <p id="status-inv01"></p>
+                </div>
+            </div>
+            <div class="inverter-col">
+                <h3>Inversor 2</h3>
+                <div id="inv02-config-fields"></div>
+                <div class="config-buttons">
+                    <button onclick="loadInverterConfig('inv02')">🔄 Cargar</button>
+                    <button onclick="saveInverterConfig('inv02')">💾 Salvar</button>
+                    <p id="status-inv02"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pestaña 3: Configuración del sistema -->
+    <div id="Tab3" class="tabcontent">
+        <h2>⚙️ Configuración del sistema</h2>
+        <table id="config-table">
+            <tr>
+                <td>Retardo entre lecturas de inversores (ms)</td>
+                <td><input type="number" id="delay_between_inverters_ms" /></td>
+            </tr>
+            <tr>
+                <td>IP del adaptador TCP/Serial (Inversor 1)</td>
+                <td><input type="text" id="inverter1_tcp_ip" /></td>
+            </tr>
+            <tr>
+                <td>Puerto TCP/Serial (Inversor 1)</td>
+                <td><input type="number" id="inverter1_tcp_port" /></td>
+            </tr>
+            <tr>
+                <td>IP del adaptador TCP/Serial (Inversor 2)</td>
+                <td><input type="text" id="inverter2_tcp_ip" /></td>
+            </tr>
+            <tr>
+                <td>Puerto TCP/Serial (Inversor 2)</td>
+                <td><input type="number" id="inverter2_tcp_port" /></td>
+            </tr>
+            <tr>
+                <td>IP del broker MQTT</td>
+                <td><input type="text" id="mqtt_broker_ip" /></td>
+            </tr>
+            <tr>
+                <td>Puerto MQTT (TCP)</td>
+                <td><input type="number" id="mqtt_broker_port" /></td>
+            </tr>
+            <tr>
+                <td>Puerto MQTT (WebSocket)</td>
+                <td><input type="number" id="mqtt_broker_ws_port" /></td>
+            </tr>
+            <tr>
+                <td>Usuario MQTT</td>
+                <td><input type="text" id="mqtt_user" /></td>
+            </tr>
+            <tr>
+                <td>Contraseña MQTT</td>
+                <td><input type="password" id="mqtt_password" /></td>
+            </tr>
+        </table>
+        <br />
+        <button onclick="loadConfig()">🔄 Cargar</button>
+        <button onclick="saveConfig()">💾 Salvar</button>
+        <p id="config-status"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
