@@ -1,0 +1,12 @@
+{
+  "delay_between_inverters_ms": 1000,
+  "inverter1_tcp_ip": "10.0.0.235",
+  "inverter1_tcp_port": 26,
+  "inverter2_tcp_ip": "10.0.0.236",
+  "inverter2_tcp_port": 27,
+  "mqtt_broker_ip": "10.0.0.250",
+  "mqtt_broker_port": 1883,
+  "mqtt_broker_ws_port": 9001,
+  "mqtt_user": "usuario",
+  "mqtt_password": "password"
+}
