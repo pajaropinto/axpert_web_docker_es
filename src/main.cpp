@@ -380,123 +380,129 @@ void addInverterStatusFlags(json &j, const std::string &statusStr) {
 
 json parseQPGS(const std::string &cleanResponse, const std::string &inverterId,
                std::string &out_fault_code, std::string &out_inverter_status) {
-    std::istringstream iss(cleanResponse);
-    std::vector<std::string> fields;
-    std::string field;
-    while (iss >> field) {
-        fields.push_back(field);
+  std::istringstream iss(cleanResponse);
+  std::vector<std::string> fields;
+  std::string field;
+  while (iss >> field) {
+    fields.push_back(field);
+  }
+  if (fields.size() < 28) {
+    throw std::runtime_error("Menos de 28 campos en QPGS");
+  }
+
+  out_fault_code = fields[3];
+  out_inverter_status = fields[19];
+
+  auto to_double = [](const std::string &s) -> double {
+    try {
+      return std::stod(s);
+    } catch (...) {
+      return 0.0;
     }
-    if (fields.size() < 28) {
-        throw std::runtime_error("Menos de 28 campos en QPGS");
+  };
+  auto to_int = [](const std::string &s) -> int {
+    try {
+      return std::stoi(s);
+    } catch (...) {
+      return 0;
     }
+  };
+  auto round2 = [](double value) -> double {
+    return std::round(value * 100.0) / 100.0;
+  };
 
-    out_fault_code = fields[3];
-    out_inverter_status = fields[19];
+  // --- PV cálculos (campos 14, 25, 27) ---
+  double pv1_v = round2(to_double(fields[14]));      // PV1 voltage
+  double pv2_v = round2(to_double(fields[27]));      // PV2 voltage
+  double pv_total_i = round2(to_double(fields[25])); // Total PV current
+  double pv1_i = 0.0, pv2_i = 0.0;
 
-    auto to_double = [](const std::string &s) -> double {
-        try {
-            return std::stod(s);
-        } catch (...) {
-            return 0.0;
-        }
-    };
-    auto to_int = [](const std::string &s) -> int {
-        try {
-            return std::stoi(s);
-        } catch (...) {
-            return 0;
-        }
-    };
-    auto round2 = [](double value) -> double {
-        return std::round(value * 100.0) / 100.0;
-    };
+  if (pv1_v + pv2_v > 0.1) {
+    pv1_i = pv_total_i * (pv1_v / (pv1_v + pv2_v));
+    pv2_i = pv_total_i * (pv2_v / (pv1_v + pv2_v));
+  } else {
+    pv1_i = pv_total_i;
+    pv2_i = 0.0;
+  }
+  pv1_i = round2(pv1_i);
+  pv2_i = round2(pv2_i);
+  double pv1_p = round2(pv1_v * pv1_i);
+  double pv2_p = round2(pv2_v * pv2_i);
 
-    // --- PV cálculos (campos 14, 25, 27) ---
-    double pv1_v = round2(to_double(fields[14])); // PV1 voltage
-    double pv2_v = round2(to_double(fields[27])); // PV2 voltage
-    double pv_total_i = round2(to_double(fields[25])); // Total PV current
-    double pv1_i = 0.0, pv2_i = 0.0;
+  json j;
+  j["inverter_id"] = inverterId;
+  j["parallel_configuration"] = fields[0];
+  j["serial_number"] = fields[1];
+  j["work_mode"] = fields[2];
+  j["grid_input_voltage"] = round2(to_double(fields[4]));
+  j["grid_input_frequency"] = round2(to_double(fields[5]));
+  j["ac_output_voltage"] = round2(to_double(fields[6]));
+  j["ac_output_frequency"] = round2(to_double(fields[7]));
+  j["ac_output_apparent_power"] = to_int(fields[8]);
+  j["ac_output_active_power"] = to_int(fields[9]);
 
-    if (pv1_v + pv2_v > 0.1) {
-        pv1_i = pv_total_i * (pv1_v / (pv1_v + pv2_v));
-        pv2_i = pv_total_i * (pv2_v / (pv1_v + pv2_v));
-    } else {
-        pv1_i = pv_total_i;
-        pv2_i = 0.0;
-    }
-    pv1_i = round2(pv1_i);
-    pv2_i = round2(pv2_i);
-    double pv1_p = round2(pv1_v * pv1_i);
-    double pv2_p = round2(pv2_v * pv2_i);
+  double ac_apparent = static_cast<double>(to_int(fields[8]));
+  double ac_active = static_cast<double>(to_int(fields[9]));
+  double ac_reactive = std::round((ac_apparent - ac_active) * 100.0) / 100.0;
+  j["ac_output_reactive_power"] = ac_reactive;
 
-    json j;
-    j["inverter_id"] = inverterId;
-    j["parallel_configuration"] = fields[0];
-    j["serial_number"] = fields[1];
-    j["work_mode"] = fields[2];
-    j["grid_input_voltage"] = round2(to_double(fields[4]));
-    j["grid_input_frequency"] = round2(to_double(fields[5]));
-    j["ac_output_voltage"] = round2(to_double(fields[6]));
-    j["ac_output_frequency"] = round2(to_double(fields[7]));
-    j["ac_output_apparent_power"] = to_int(fields[8]);
-    j["ac_output_active_power"] = to_int(fields[9]);
+  j["load_percentage"] = to_int(fields[10]);
+  j["battery_voltage"] = round2(to_double(fields[11]));
+  j["battery_charging_current"] = to_int(fields[12]);
+  j["battery_soc"] = to_int(fields[13]);
+  j["pv1_input_voltaje"] = pv1_v;
+  // 🔸 IMPORTANTE: LEER field[15] aunque no lo guardemos
+  int battery_total_charging =
+      to_int(fields[15]); // <-- Necesario para no desplazar índices
+  // j["battery_total_all_inputs_charging_current"] = battery_total_charging; //
+  // NO se incluye
 
-    double ac_apparent = static_cast<double>(to_int(fields[8]));
-    double ac_active = static_cast<double>(to_int(fields[9]));
-    double ac_reactive = std::round((ac_apparent - ac_active) * 100.0) / 100.0;
-    j["ac_output_reactive_power"] = ac_reactive;
+  j["output_mode"] = to_int(fields[20]);
+  j["charger_source_priority"] = to_int(fields[21]);
+  j["config_max_charger_current"] = to_int(fields[22]);
+  j["config_max_charge_range"] = to_int(fields[23]);
+  j["config_max_ac_charger_current"] =
+      to_int(fields[24]); // ← usado en cálculo AC power
 
-    j["load_percentage"] = to_int(fields[10]);
-    j["battery_voltage"] = round2(to_double(fields[11]));
-    j["battery_charging_current"] = to_int(fields[12]);
-    j["battery_soc"] = to_int(fields[13]);
-    j["pv1_input_voltaje"] = pv1_v;
-    // 🔸 IMPORTANTE: LEER field[15] aunque no lo guardemos
-    int battery_total_charging = to_int(fields[15]); // <-- Necesario para no desplazar índices
-    // j["battery_total_all_inputs_charging_current"] = battery_total_charging; // NO se incluye
+  j["pv_total_input_current"] =
+      pv_total_i; // ← Este se mantiene (reemplaza "total_inv_pv_input_current")
+  j["battery_discharge_current"] = to_int(fields[26]);
+  j["pv2_input_voltaje"] = pv2_v;
+  j["pv1_input_current"] = pv1_i;
+  j["pv2_input_current"] = pv2_i;
+  j["pv1_input_power"] = pv1_p;
+  j["pv2_input_power"] = pv2_p;
 
-    j["output_mode"] = to_int(fields[20]);
-    j["charger_source_priority"] = to_int(fields[21]);
-    j["config_max_charger_current"] = to_int(fields[22]);
-    j["config_max_charge_range"] = to_int(fields[23]);
-    j["config_max_ac_charger_current"] = to_int(fields[24]); // ← usado en cálculo AC power
+  // 🔸 CALCULO: battery_real_charge_current
+  int charging = j["battery_charging_current"].get<int>();
+  int discharging = j["battery_discharge_current"].get<int>();
+  double battery_real_charge = 0.0;
+  if (charging > 0 && discharging == 0) {
+    battery_real_charge = static_cast<double>(charging);
+  } else if (charging == 0 && discharging > 0) {
+    battery_real_charge = -static_cast<double>(discharging);
+  } else if (charging > 0 && discharging > 0) {
+    battery_real_charge = static_cast<double>(charging - discharging);
+  }
+  battery_real_charge = round2(battery_real_charge);
+  j["battery_real_charge_current"] = battery_real_charge;
 
-    j["pv_total_input_current"] = pv_total_i; // ← Este se mantiene (reemplaza "total_inv_pv_input_current")
-    j["battery_discharge_current"] = to_int(fields[26]);
-    j["pv2_input_voltaje"] = pv2_v;
-    j["pv1_input_current"] = pv1_i;
-    j["pv2_input_current"] = pv2_i;
-    j["pv1_input_power"] = pv1_p;
-    j["pv2_input_power"] = pv2_p;
+  // 🔸 CALCULO: battery_real_power = real_charge * battery_voltage
+  double battery_voltage = j["battery_voltage"].get<double>();
+  double battery_real_power = round2(battery_real_charge * battery_voltage);
+  j["battery_real_power"] = battery_real_power;
 
-    // 🔸 CALCULO: battery_real_charge_current
-    int charging = j["battery_charging_current"].get<int>();
-    int discharging = j["battery_discharge_current"].get<int>();
-    double battery_real_charge = 0.0;
-    if (charging > 0 && discharging == 0) {
-        battery_real_charge = static_cast<double>(charging);
-    } else if (charging == 0 && discharging > 0) {
-        battery_real_charge = -static_cast<double>(discharging);
-    } else if (charging > 0 && discharging > 0) {
-        battery_real_charge = static_cast<double>(charging - discharging);
-    }
-    battery_real_charge = round2(battery_real_charge);
-    j["battery_real_charge_current"] = battery_real_charge;
+  // 🔸 CALCULO: ac_input_power_estimate = grid_voltage *
+  // config_max_ac_charger_current
+  double grid_voltage = j["grid_input_voltage"].get<double>();
+  int max_ac_charger = j["config_max_ac_charger_current"].get<int>();
+  double ac_input_power_estimate =
+      round2(grid_voltage * static_cast<double>(max_ac_charger));
+  j["ac_input_power_estimate"] = ac_input_power_estimate;
 
-    // 🔸 CALCULO: battery_real_power = real_charge * battery_voltage
-    double battery_voltage = j["battery_voltage"].get<double>();
-    double battery_real_power = round2(battery_real_charge * battery_voltage);
-    j["battery_real_power"] = battery_real_power;
-
-    // 🔸 CALCULO: ac_input_power_estimate = grid_voltage * config_max_ac_charger_current
-    double grid_voltage = j["grid_input_voltage"].get<double>();
-    int max_ac_charger = j["config_max_ac_charger_current"].get<int>();
-    double ac_input_power_estimate = round2(grid_voltage * static_cast<double>(max_ac_charger));
-    j["ac_input_power_estimate"] = ac_input_power_estimate;
-
-    addFaultFlags(j, out_fault_code);
-    addInverterStatusFlags(j, out_inverter_status);
-    return j;
+  addFaultFlags(j, out_fault_code);
+  addInverterStatusFlags(j, out_inverter_status);
+  return j;
 }
 
 bool hasAnyAlarm(const json &j) {
@@ -541,7 +547,8 @@ bool hasAnyAlarm(const json &j) {
 // === main ===
 int main() {
   initLogger();
-  logMessage("🚀 Iniciando axpert_monitor en modo continuo (recarga config en cada ciclo)...");
+  logMessage("🚀 Iniciando axpert_monitor en modo continuo (recarga config en "
+             "cada ciclo)...");
 
   // --- Iniciar MQTT ---
   mosquitto_lib_init();
@@ -597,7 +604,8 @@ int main() {
       continue;
     }
 
-    if (connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+    if (connect(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)) <
+        0) {
       logMessage("❌ Fallo al conectar al conversor TCP/serial en " +
                  g_config.inverter1_tcp_ip + ":" +
                  std::to_string(g_config.inverter1_tcp_port));
@@ -622,26 +630,35 @@ int main() {
       json inv0 = parseQPGS(resp0, "QPGS0", fault0, status0);
       json inv1 = parseQPGS(resp1, "QPGS1", fault1, status1);
 
-      // 🔍 [OPCIONAL] Logs de depuración (puedes comentarlos si no los necesitas)
-      logMessage("DEBUG inv0 battery_real_charge_current: " + std::to_string(inv0["battery_real_charge_current"].get<double>()));
-      logMessage("DEBUG inv0 ac_input_power_estimate: " + std::to_string(inv0["ac_input_power_estimate"].get<double>()));
-      logMessage("DEBUG inv1 battery_real_charge_current: " + std::to_string(inv1["battery_real_charge_current"].get<double>()));
+      // 🔍 [OPCIONAL] Logs de depuración (puedes comentarlos si no los
+      // necesitas)
+      logMessage(
+          "DEBUG inv0 battery_real_charge_current: " +
+          std::to_string(inv0["battery_real_charge_current"].get<double>()));
+      logMessage("DEBUG inv0 ac_input_power_estimate: " +
+                 std::to_string(inv0["ac_input_power_estimate"].get<double>()));
+      logMessage(
+          "DEBUG inv1 battery_real_charge_current: " +
+          std::to_string(inv1["battery_real_charge_current"].get<double>()));
 
       // === CÁLCULOS ===
       double total_system_battery_real_charge =
           inv0["battery_real_charge_current"].get<double>() +
           inv1["battery_real_charge_current"].get<double>();
-      total_system_battery_real_charge = std::round(total_system_battery_real_charge * 100.0) / 100.0;
+      total_system_battery_real_charge =
+          std::round(total_system_battery_real_charge * 100.0) / 100.0;
 
       double total_system_battery_power =
           inv0["battery_real_power"].get<double>() +
           inv1["battery_real_power"].get<double>();
-      total_system_battery_power = std::round(total_system_battery_power * 100.0) / 100.0;
+      total_system_battery_power =
+          std::round(total_system_battery_power * 100.0) / 100.0;
 
       double total_system_estimate_ac_input_power =
           inv0["ac_input_power_estimate"].get<double>() +
           inv1["ac_input_power_estimate"].get<double>();
-      total_system_estimate_ac_input_power = std::round(total_system_estimate_ac_input_power * 100.0) / 100.0;
+      total_system_estimate_ac_input_power =
+          std::round(total_system_estimate_ac_input_power * 100.0) / 100.0;
 
       int total_charging = inv0["battery_charging_current"].get<int>() +
                            inv1["battery_charging_current"].get<int>();
@@ -652,14 +669,18 @@ int main() {
                       inv1["battery_voltage"].get<double>()) *
                      50.0) /
           100.0;
-      int total_system_load_percentage = inv0["load_percentage"].get<int>() +
-                                         inv1["load_percentage"].get<int>();
+      double total_system_load_percentage =
+          (inv0["load_percentage"].get<int>() +
+           inv1["load_percentage"].get<int>()) /
+          2.0;
       double total_pv_current = inv0["pv_total_input_current"].get<double>() +
                                 inv1["pv_total_input_current"].get<double>();
       total_pv_current = std::round(total_pv_current * 100.0) / 100.0;
       double total_pv_power =
-          std::round((inv0["pv1_input_power"].get<double>() + inv0["pv2_input_power"].get<double>() +
-                      inv1["pv1_input_power"].get<double>() + inv1["pv2_input_power"].get<double>()) *
+          std::round((inv0["pv1_input_power"].get<double>() +
+                      inv0["pv2_input_power"].get<double>() +
+                      inv1["pv1_input_power"].get<double>() +
+                      inv1["pv2_input_power"].get<double>()) *
                      100.0) /
           100.0;
       int system_status = (hasAnyAlarm(inv0) || hasAnyAlarm(inv1)) ? 1 : 0;
@@ -699,12 +720,15 @@ int main() {
       totals["total_system_grid_input_frequency"] = avg_grid_frequency;
 
       // 🔸 NUEVOS CAMPOS EN TOTALES
-      totals["total_system_battery_real_charge"] = total_system_battery_real_charge;
+      totals["total_system_battery_real_charge"] =
+          total_system_battery_real_charge;
       totals["total_system_battery_power"] = total_system_battery_power;
-      totals["total_system_estimate_ac_input_power"] = total_system_estimate_ac_input_power;
+      totals["total_system_estimate_ac_input_power"] =
+          total_system_estimate_ac_input_power;
 
       // 🔍 [OPCIONAL] Log de totales
-      logMessage("DEBUG total_system_battery_real_charge: " + std::to_string(total_system_battery_real_charge));
+      logMessage("DEBUG total_system_battery_real_charge: " +
+                 std::to_string(total_system_battery_real_charge));
 
       // Publicar
       publishMQTT(mosq, TOPIC_INV0, inv0);
